@@ -1,38 +1,151 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body,
+#root {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(13, 14, 16);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* to hide the number upperArrow,downArrow when you click,hover on the phone number input  */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.parent {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.login__container,
+.otp__container {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: aliceblue;
+  align-items: start !important;
+}
+
+.form_title {
+  font-size: 2.5rem;
+  /* align-self: center !important; */
+}
+
+.form_input {
+  width: 100%;
+  font-size: 2.5rem;
+  color: grey;
+  display: flex;
+  font-weight: bolder;
+  border-bottom: 0.21rem solid rgba(192, 32, 163, 0.5);
+  padding: 0.51rem;
+  letter-spacing: 2px;
+  transition: all 0.5s;
+}
+
+.form_input:hover {
+  border-bottom: 0.21rem solid rgba(192, 32, 163, 1) !important;
+  transition: all 0.1s !important;
+}
+
+#countrycode {
+  width: 10%;
+}
+
+#email,
+.otpNum {
+  outline: none;
+  border: none;
+  width: 90%;
+  font-size: inherit;
+  color: aliceblue;
+  font-weight: inherit;
+  background-color: transparent;
+  padding-left: 1rem;
+  letter-spacing: 0.2rem;
+}
+
+#phone {
+  padding-left: 2rem;
+}
+
+.otpNumbers {
+  display: flex;
+}
+
+/* .otpNumbers:hover{
+    border-bottom: none;
+} */
+
+.otpNum {
+  font-size: 5rem;
+  border-bottom: 0.41rem solid rgba(192, 32, 163, 0.5);
+  margin: 2rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.submit_Login {
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#Continue_login_button,
+#Continue_otp_button {
+  outline: none;
+  border: none;
+  padding: 2rem 2rem;
+  font-size: 2.5rem;
+  border-radius: 1rem;
+  background-color: rgba(192, 32, 163, 0.5);
+  font-weight: bolder;
+  color: rgba(240, 248, 255, 0.468);
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.term_and_condition {
+  align-self: center;
+}
+.term_and_condition small {
+  line-height: 2.5rem;
+  text-align: center;
+  width: 85%;
+  font-size: 1.6rem;
+  word-wrap: break-word;
+}
+
+.highlight {
+  color: rgba(192, 32, 163, 1);
+}
+
+.backArrow {
+  width: max-content;
+  margin: 2rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#userEmail {
+  padding: 0 0 0 1rem;
+  font-weight: bolder;
 }
