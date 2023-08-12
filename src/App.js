@@ -1,9 +1,18 @@
-import "./App.css";
-import Form from "./Form";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Form from "./Components/Form";
+import UserForm from "./Components/UserForm.js";
 function App() {
   return (
     <>
-      <Form />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Form />} />
+        </Routes>
+        <Routes>
+          <Route path="/UserForm" element={<UserForm />} />
+        </Routes>
+      </BrowserRouter>
+      8010498912
     </>
   );
 }

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import emailjs, { sendForm } from "emailjs-com";
+import { Link } from "react-router-dom";
+import "../Css/App.css";
 
 class Form extends Component {
   constructor(props) {
@@ -123,24 +125,27 @@ class Form extends Component {
       });
       // Make the button value Verified when user enter the correct otp
       if (this.state.generatedOTP == user_otp) {
+        document.querySelector("#Continue_otp_button").style.cursor = "auto";
         document.querySelector("#Continue_otp_button").style.backgroundColor =
           "rgb(11,119,8)";
         document.querySelector("#userEmail").style.color = "rgb(11, 119, 8)";
         this.setState({ status: "Verified" });
         document.querySelectorAll(".otpNum").forEach((number, i) => {
+          // making the otp field disabled
+          number.setAttribute("disabled", "disabled");
           number.style.borderBottom = ".41rem solid rgb(11, 119, 8)";
         });
+        document.querySelector(".backArrow").style.visibility = "hidden";
+        setTimeout(() => {
+          alert("redirecting to Internship Page");
+          document.querySelector("#internshipForm").click();
+        }, 200);
       }
       indexNumber = 0;
     };
     return (
       <div className="parent center">
-        <form
-          className="login__container center"
-          method="post"
-          id="emailForm"
-          // onSubmit={this.onSignInSubmit}
-        >
+        <form className="login__container center" method="post" id="emailForm">
           <div className="form_title">Login to continue</div>
           <div className="form_input" id="form">
             <input
@@ -233,6 +238,7 @@ class Form extends Component {
               type="submit"
               value={this.state.status}
               id="Continue_otp_button"
+              autoComplete="off"
               onClick={VerifyOTP}
             />
           </div>
@@ -243,6 +249,13 @@ class Form extends Component {
               the OTP in the above field to verify your phone.
             </small>
           </div>
+          <Link
+            to={"/UserForm"}
+            id="internshipForm"
+            style={{ display: "none" }}
+          >
+            Redirect to userForm
+          </Link>
         </form>
       </div>
     );

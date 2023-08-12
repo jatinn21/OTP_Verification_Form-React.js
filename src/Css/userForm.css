@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+textarea::placeholder,
+input::placeholder {
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: rgb(13, 14, 16);
+  font-family: sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  /* margin-bottom: 3rem; */
+}
+
+nav span {
+  font-size: 3rem;
+  color: white;
+}
+
+/* caroursel start */
+.carourselParent {
+  display: flex;
+  width: 100vw;
+}
+
+.caroursel {
+  height: 30rem !important;
+  animation: scroll 30s linear infinite;
+}
+
+.card {
+  min-height: 22rem !important;
+  width: 22rem;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  color: white !important;
+  background-color: grey;
+  margin: 0 1rem;
+  border-radius: 1.5rem;
+  /* opacity: 0.6; */
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Set the Job Images start */
+.card:nth-child(1) {
+  background-image: url("https://ih1.redbubble.net/image.2581550683.5788/st,small,507x507-pad,600x600,f8f8f8.jpg");
+}
+.card:nth-child(2) {
+  background-image: url("https://ih1.redbubble.net/image.3944525846.6311/st,small,507x507-pad,600x600,f8f8f8.jpg");
+}
+.card:nth-child(3) {
+  background-image: url("https://ih1.redbubble.net/image.587727039.5490/st,small,507x507-pad,600x600,f8f8f8.u1.jpg");
+}
+.card:nth-child(4) {
+  background-image: url("https://ih1.redbubble.net/image.679158181.5630/poster,840x830,f8f8f8-pad,1000x1000,f8f8f8.u1.jpg");
+}
+.card:nth-child(5) {
+  background-image: url("https://ih1.redbubble.net/image.4874025255.9542/st,small,507x507-pad,600x600,f8f8f8.jpg");
+}
+.card:nth-child(6) {
+  background-image: url("https://ih1.redbubble.net/image.4037311354.3867/st,small,507x507-pad,600x600,f8f8f8.jpg");
+}
+.card:nth-child(7) {
+  background-image: url("https://ih1.redbubble.net/image.2732748674.3730/st,small,507x507-pad,600x600,f8f8f8.jpg");
+}
+.card:nth-child(8) {
+  background-image: url("https://res.cloudinary.com/teepublic/image/private/s--hrPBgSj6--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_000000,e_outline:35/co_000000,e_outline:inner_fill:35/co_ffffff,e_outline:35/co_ffffff,e_outline:inner_fill:35/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_auto,h_630,q_auto:good:420,w_630/v1553536742/production/designs/4493344_1.jpg");
+}
+/* Set the Job Images end */
+
+.card span {
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: bolder;
+  background-color: rgba(0, 0, 0, 0.765);
+  text-align: center;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* This is for headingContainer */
+/* .headingContainer {
+  height: 30rem;
+  background-color: red !important;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  font-size: 5rem;
+  position: relative;
+  z-index: 1;
+} */
+
+.caroursel__Title {
+  /* position: absolute;
+    height: 30rem;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+    width: max-content;
+    padding: 2rem 5rem; */
+  text-align: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+/* caroursel end */
+
+/* User Form Detail starts */
+.parentContainer {
+  height: max-content;
+  width: 100vw;
+  padding: 7rem;
+  flex-direction: column;
+}
+
+.userForm h1 {
+  justify-self: left;
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.userForm {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 3rem;
+}
+
+.userField {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.userForm label {
+  color: white;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+input,
+.upload_resume,
+textarea,
+select {
+  padding: 1rem 1rem;
+  font-size: 2rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  border: 2px solid rgb(138, 132, 132);
+  resize: none;
+}
+
+option {
+  background-color: rgb(13, 14, 16);
+  color: white;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-size: contain;
+  background-position: center;
+  background-color: rgb(186, 185, 185) !important;
+  width: 5rem;
+  opacity: 01;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.upload_resume {
+  border: 2px solid rgb(138, 132, 132);
+  color: rgb(217, 0, 141);
+  font-weight: bolder;
+  font-size: 2.5rem;
+}
+.custom_Input {
+  margin: 0 0.5rem;
+  border-bottom: 2px solid rgb(217, 0, 141);
+  cursor: pointer;
+}
+
+.custom_Input:hover {
+  color: rgb(150, 28, 107);
+  border-bottom: 2px solid rgb(150, 28, 107);
+}
+
+.hidden-input {
+  position: absolute;
+  left: -9999999px;
+}
+
+#userForm_Submit_btn {
+  border: none;
+  width: 30rem;
+  background-color: rgb(217, 0, 141);
+  cursor: pointer;
+}
+
+#userForm_Submit_btn:hover {
+  background-color: rgb(150, 28, 107);
+}
+
+/* User Form Detail ends */

@@ -49,7 +49,6 @@ input::-webkit-inner-spin-button {
 
 .form_title {
   font-size: 2.5rem;
-  /* align-self: center !important; */
 }
 
 .form_input {
@@ -94,15 +93,14 @@ input::-webkit-inner-spin-button {
   display: flex;
 }
 
-/* .otpNumbers:hover{
-    border-bottom: none;
-} */
-
 .otpNum {
   font-size: 5rem;
   border-bottom: 0.41rem solid rgba(192, 32, 163, 0.5);
   margin: 2rem;
   text-align: center;
+  border-radius: 0;
+  /* width: min-content; */
+  padding: 0rem;
 }
 
 .submit_Login {
@@ -148,4 +146,11 @@ input::-webkit-inner-spin-button {
 #userEmail {
   padding: 0 0 0 1rem;
   font-weight: bolder;
+}
+
+/* Otp box*/
+#otp {
+  border: none;
+  outline: none;
+  max-height: 0.1px;
 }
