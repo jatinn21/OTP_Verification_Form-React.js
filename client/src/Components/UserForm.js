@@ -55,7 +55,7 @@ class UserForm extends Component {
 
     const { name, email, mobileNumber, DOB, gender, address, intro, resume } =
       this.state;
-    const res = await fetch("https://job-forma-app.onrender.com/register", {
+    const res = await fetch("/register", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
