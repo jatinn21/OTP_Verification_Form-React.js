@@ -147,7 +147,7 @@ class Form extends Component {
         setTimeout(() => {
           window.alert("Redirecting to Internship Form...");
           document.querySelector("#internshipForm").click();
-        }, 2000);
+        }, 1000);
       }
       indexNumber = 0;
     };
@@ -197,7 +197,6 @@ class Form extends Component {
           style={{ display: "none" }}
           autoComplete="off"
           method="get"
-          action="/register"
         >
           <div className="form_title">
             <span className="backArrow" onClick={this.backArrow}>
