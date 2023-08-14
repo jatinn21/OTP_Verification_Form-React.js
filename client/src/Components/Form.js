@@ -11,6 +11,12 @@ class Form extends Component {
       otp_entered: "",
       generatedOTP: "",
       status: "Verify OTP",
+      name: "",
+      mobileNumber: "",
+      DOB: "",
+      address: "",
+      intro: "",
+      resume: "",
     };
   }
 
@@ -112,6 +118,7 @@ class Form extends Component {
     //   to verify the otp when user clicks the Verify OTP button
     const VerifyOTP = (event) => {
       event.preventDefault();
+
       let user_otp = "";
       document.querySelectorAll(".otpNum").forEach((eachNumber, i) => {
         user_otp += eachNumber.value;
@@ -125,6 +132,7 @@ class Form extends Component {
       });
       // Make the button value Verified when user enter the correct otp
       if (this.state.generatedOTP == user_otp) {
+        localStorage.setItem("email", this.state.email);
         document.querySelector("#Continue_otp_button").style.cursor = "auto";
         document.querySelector("#Continue_otp_button").style.backgroundColor =
           "rgb(11,119,8)";
@@ -137,9 +145,9 @@ class Form extends Component {
         });
         document.querySelector(".backArrow").style.visibility = "hidden";
         setTimeout(() => {
-          alert("redirecting to Internship Page");
+          window.alert("Redirecting to Internship Form...");
           document.querySelector("#internshipForm").click();
-        }, 200);
+        }, 2000);
       }
       indexNumber = 0;
     };
@@ -188,7 +196,8 @@ class Form extends Component {
           id="otp__container"
           style={{ display: "none" }}
           autoComplete="off"
-          method="post"
+          method="get"
+          action="/register"
         >
           <div className="form_title">
             <span className="backArrow" onClick={this.backArrow}>
@@ -242,6 +251,18 @@ class Form extends Component {
               onClick={VerifyOTP}
             />
           </div>
+          <input
+            type="email"
+            value={this.state.email}
+            style={{ display: "none" }}
+          />
+          <Link
+            to={"/UserForm"}
+            id="internshipForm"
+            style={{ display: "none" }}
+          >
+            redirect to user Form
+          </Link>
           <div className="term_and_condition center">
             <small>
               A OTP has been sent to
@@ -249,13 +270,6 @@ class Form extends Component {
               the OTP in the above field to verify your phone.
             </small>
           </div>
-          <Link
-            to={"/UserForm"}
-            id="internshipForm"
-            style={{ display: "none" }}
-          >
-            Redirect to userForm
-          </Link>
         </form>
       </div>
     );

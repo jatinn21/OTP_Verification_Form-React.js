@@ -7,11 +7,12 @@ class UserForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      email: localStorage.getItem("email"),
       name: "",
       mobileNumber: "",
       address: "",
       DOB: "",
-      gender: "",
+      gender: "Male",
       intro: "",
       resume: "",
       isLoggedIn: false,
@@ -45,14 +46,42 @@ class UserForm extends Component {
   handleResume = (event) => {
     this.setState({ resume: event.target.value });
     document.querySelector(".custom_Input").style.display = "none";
-    // document.querySelector(".resume-fileName").textContent = "hello brotehr";
     let filename = document.querySelector(".hidden-input").value;
     document.querySelector(".resume-fileName").textContent = filename;
-    // console.log(filename);
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
+
+    const { name, email, mobileNumber, DOB, gender, address, intro, resume } =
+      this.state;
+    const res = await fetch("/register", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        mobileNumber,
+        DOB,
+        gender,
+        address,
+        intro,
+        resume,
+      }),
+    });
+
+    const data = await res.json();
+    if (data.status === 422 || !data) {
+      window.alert("User Already Exist");
+      console.log("invalid registration");
+    } else {
+      window.alert("Your Data has been received by us.\nThank you");
+      console.log("Registration Successfully");
+    }
+
+    // sending the user to another page
     document.querySelector("#userFormSubmitted").click();
   };
   render() {
@@ -180,7 +209,9 @@ class UserForm extends Component {
                 value={this.state.gender}
                 onChange={this.handleGender}
               >
-                <option value="male">Male</option>
+                <option value="male" selected>
+                  Male
+                </option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
               </select>
@@ -235,7 +266,7 @@ class UserForm extends Component {
             />
           </form>
           <Link
-            to={"/ThankYou"}
+            to={"https://jsac.jharkhand.gov.in/"}
             id="userFormSubmitted"
             style={{ display: "none" }}
           >

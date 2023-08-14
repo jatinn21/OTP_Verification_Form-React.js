@@ -38,7 +38,13 @@ moongoose.connect(DB,{
 */
 
 // importing our schema details
-const User = require("./model/schema");
+// const User = require("./model/schema");
+
+// To bring the JSON data in our console
+app.use(express.json());
+
+// for routing things, we will use our authm abh kuch bhi path ka hoga matter woh yeh auth dekhega
+app.use(require("./router/auth"));
 
 // const status = "PASS";
 
@@ -49,19 +55,6 @@ const middleware = (req, res, next) => {
   next();
 };
 
-app.get("/", (req, res) => {
-  res.send("Hello world from the server");
-});
-
-app.get("/about", middleware, (req, res) => {
-  console.log("Hi from About too");
-  res.send("This is About page");
-});
-app.get("/contact", (req, res) => {
-  res.send("This is Contact Page");
-  console.log(`request : ${req}`);
-  console.log(`resposne : ${res}`);
-});
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
