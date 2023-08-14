@@ -22,7 +22,7 @@ const User = require("../model/schema");
 // }
 
 // To get the data that user has submitted, we will use 'post' ,no more questions!!!
-router.post("https://job-forma-app.onrender.com/register", async (req, res) => {
+router.post("/register", async (req, res) => {
   // So to print that object or JSON data in our console
   // before auth file in app.js : app.use(express.json()) :
 
