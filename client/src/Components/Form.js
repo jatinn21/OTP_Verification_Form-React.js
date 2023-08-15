@@ -17,6 +17,7 @@ class Form extends Component {
       address: "",
       intro: "",
       resume: "",
+      buttonStatus: true,
     };
   }
 
@@ -29,11 +30,16 @@ class Form extends Component {
     const emailStatus = pattern.test(event.target.value);
 
     if (emailStatus) {
+      this.setState({ buttonStatus: false });
+      document.querySelector(".login__container").disabled =
+        this.state.buttonStatus;
       document.querySelector("#Continue_login_button").style.color = "white";
       document.querySelector("#Continue_login_button").style.backgroundColor =
         "rgba(192, 32, 163,1)";
       document.querySelector("#Continue_login_button").style.cursor = "pointer";
     } else {
+      this.setState({ buttonStatus: true });
+
       document.querySelector("#Continue_login_button").style.color = "grey";
       document.querySelector("#Continue_login_button").style.backgroundColor =
         "rgba(192, 32, 163,.5)";
@@ -45,6 +51,7 @@ class Form extends Component {
   loginForm = (event) => {
     event.preventDefault();
     document.querySelector(".login__container").style.display = "none";
+    document.querySelector(".login__container").disabled = "true";
     document.querySelector(".otp__container").style.display = "flex";
     document.querySelector("#userEmail").textContent = this.state.email;
 
@@ -134,6 +141,7 @@ class Form extends Component {
       if (this.state.generatedOTP == user_otp) {
         localStorage.setItem("email", this.state.email);
         document.querySelector("#Continue_otp_button").style.cursor = "auto";
+        // .disabled = true;
         document.querySelector("#Continue_otp_button").style.backgroundColor =
           "rgb(11,119,8)";
         document.querySelector("#userEmail").style.color = "rgb(11, 119, 8)";
@@ -171,6 +179,7 @@ class Form extends Component {
               type="submit"
               value="Continue"
               id="Continue_login_button"
+              disabled={this.state.buttonStatus}
               onClick={this.loginForm}
             />
           </div>

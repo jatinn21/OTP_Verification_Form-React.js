@@ -5,7 +5,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const app = express();
+var cors = require("cors");
 
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 // Connecting to my database with Security but don't forgot to add the config.env file in gitignore
 dotenv.config({ path: "./config.env" }); // yeh or kahi nhi lagega kyu ki yeh app.js mai hai
 const PORT = process.env.PORT;
