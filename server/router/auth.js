@@ -10,6 +10,10 @@ const router = express.Router();
 require("../db/connection");
 const User = require("../model/schema");
 
+// * using multer-gridfs-storage engine
+const upload = require("../utils/upload");
+
+
 // Same thing that we have done in app.js using app.get
 
 // {
@@ -65,4 +69,24 @@ router.post("/register", async (req, res) => {
 
   //   res.send("mera register page"); // this is done bby using Post so first user should request for this page otherwise there will be a 'Cannot GET / register'
 });
+
+// * sending images to mongodb
+/**
+ * * The `upload.single("avatar")` middleware is used to handle the file upload. 
+ * * upload.single("avatar") Returns middleware that processes 
+ * * a single file associated with the given form field. 
+ * 
+ * * postman => Body 
+ * * select => form-data
+ * * key => avatar , value => change type ,text to file => than selct file and upload 
+*/
+router.post("/upload/image", upload.single("avatar"), (req, res) => {
+  const file = req.file
+  // Respond with the file details
+  res.send({
+    message: "Uploaded",
+    file:file.name
+  })
+})
+
 module.exports = router;

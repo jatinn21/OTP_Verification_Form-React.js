@@ -51,6 +51,8 @@ app.use(express.json());
 
 // for routing things, we will use our authm abh kuch bhi path ka hoga matter woh yeh auth dekhega
 app.use(require("./router/auth"));
+// * admin routing
+app.use(require("./router/admin"));
 
 // const status = "PASS";
 
