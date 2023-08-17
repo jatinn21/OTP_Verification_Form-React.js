@@ -15,10 +15,12 @@ const schema = new moongoose.Schema({
   },
   role: {
     type: String,
+    required: false,
   },
   status: {
     type: String,
     default: null,
+    required: false,
   },
   address: {
     type: String,
