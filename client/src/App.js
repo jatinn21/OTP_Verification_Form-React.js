@@ -3,6 +3,8 @@ import Form from "./Components/Form";
 import UserForm from "./Components/UserForm.js";
 import AdminLogin from "./Components/AdminLogin";
 import AdminDashboard from "./Components/AdminDashboard";
+import AdminProfile from "./Components/AdminProfile";
+import AdminSelectedApplicants from "./Components/AdminSelectedApplicants";
 function App() {
   return (
     <>
@@ -17,7 +19,16 @@ function App() {
           <Route path="/admin" element={<AdminLogin />} />
         </Routes>
         <Routes>
-          <Route path="/adminDashboard" element={<AdminDashboard />} />
+          <Route path="/admin/admin-Dashboard" element={<AdminDashboard />} />
+        </Routes>
+        <Routes>
+          <Route path="/admin/admin-Profile" element={<AdminProfile />} />
+        </Routes>
+        <Routes>
+          <Route
+            path="/admin/admin-Selected-Applicants"
+            element={<AdminSelectedApplicants />}
+          />
         </Routes>
       </BrowserRouter>
     </>

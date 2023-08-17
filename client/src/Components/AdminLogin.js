@@ -6,8 +6,8 @@ class AdminLogin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      admin__Input__email: "",
-      admin__Input__password: "",
+      admin__Input__email: "js650555@gmail.com",
+      admin__Input__password: "admin123",
       admin_LoggedIn: "",
     };
   }
@@ -49,7 +49,7 @@ class AdminLogin extends Component {
               autoComplete="off"
               placeholder="Enter your Email"
               onChange={this.handleEmail}
-              value={this.admin_email}
+              value={this.state.admin__Input__email}
               required
             />
             <input
@@ -60,7 +60,7 @@ class AdminLogin extends Component {
               className="admin__field"
               placeholder="Enter your Password"
               onChange={this.handlePassword}
-              value={this.admin_password}
+              value={this.state.admin__Input__password}
               required
             />
             <input
@@ -71,7 +71,7 @@ class AdminLogin extends Component {
           </form>
 
           <Link
-            to={"/adminDashboard"}
+            to={"/admin/admin-Dashboard"}
             id="adminCorrectDetails"
             style={{ display: "none" }}
           >

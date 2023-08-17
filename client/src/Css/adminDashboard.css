@@ -31,10 +31,185 @@ body,
   border-right: 1px solid white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.profilePicture {
+  height: 30%;
+  width: 100%;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.admin__picture {
+  height: 90%;
+  width: 60%;
+  background-color: red;
+  background-image: url("https://scontent.fpnq7-4.fna.fbcdn.net/v/t39.30808-6/356815241_809607480527746_8730052103103490929_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ZmnGoocC-k8AX-HDkAR&_nc_ht=scontent.fpnq7-4.fna&oh=00_AfDohnecSAucSkulnDinDvEbfWi3TcPEWHGXmEDOQE35-A&oe=64E2B576");
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.admin__greeting {
+  color: grey;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.links {
+  height: max-content;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
 }
 
 .link {
-  height: 4rem;
-  background-color: red;
+  height: max-content;
+  color: white;
+  width: 100%;
+  font-weight: 700;
+  font-size: 2.2rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.linkTag {
+  text-decoration: none !important;
+  color: white;
+}
+
+.logout__link {
+  color: rgb(237, 15, 15);
+}
+
+.logout__link:hover {
+  color: rgb(255, 0, 0) !important;
+}
+
+.material-symbols-outlined {
+  margin-left: 1rem;
+}
+
+.link:hover {
+  opacity: 0.5;
+  transform: scale(1.1);
+}
+
+.admin__mainBody {
+  height: 100%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.numberCards {
+  height: 25%;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  justify-content: space-evenly;
+}
+
+.numberCard {
+  height: 90%;
+  width: 30%;
+  background-color: rgba(234, 229, 229, 0.932);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card_number {
+  height: 70%;
+  width: 100%;
+  font-size: 6rem;
+  font-weight: 900;
+}
+
+.card_title {
+  height: 20%;
+  width: 100%;
+  font-size: large;
+  font-weight: 900;
+}
+
+.applicantCards {
+  height: 75%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 4rem;
+}
+
+.searchbar::placeholder {
+  text-align: center;
+  font-weight: 700;
+}
+
+input::-webkit-search-decoration {
+  display: none !important;
+}
+.searchbar {
+  font-weight: 700;
+  height: max-content;
+  width: 60%;
+  margin: 0 2rem;
+  border: 1px solid white;
+}
+
+.applicant_card_container {
+  height: max-content;
+  width: 100%;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+  overflow-y: scroll;
+}
+
+.applicant_card {
+  height: 30rem;
+  width: 30rem;
+  background-color: rgb(41, 42, 41);
+  padding: 1.5rem;
+  border-radius: 2.5rem;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.applicant_profilePicture {
+  height: 60%;
+  width: 60%;
+  border-radius: 50%;
+  background-image: url("https://as1.ftcdn.net/v2/jpg/06/22/28/62/1000_F_622286256_l15QkCPfznkmwzgfNBo60pSrLnNnM6HZ.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.applicant_card .jobrole,
+.applicant_card .name,
+.applicant_card .email {
+  color: rgb(174, 174, 174);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.applicant_card .name {
+  font-weight: 900;
+  font-size: large;
+}
+
+.applicant_card .jobrole,
+.applicant_card .name {
+  text-transform: capitalize;
+}
+.applicant_card .jobrole,
+.applicant_card .email {
+  font-style: italic;
 }
