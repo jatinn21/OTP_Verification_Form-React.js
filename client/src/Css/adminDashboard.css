@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body,
+#root {
+  height: 100vh;
+  background-color: rgb(13, 14, 16);
+  font-family: sans-serif;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adminDashboard_body {
+  height: 100vh;
+  display: flex;
+}
+
+.sideBar {
+  width: 25%;
+  border-right: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.link {
+  height: 4rem;
+  background-color: red;
+}

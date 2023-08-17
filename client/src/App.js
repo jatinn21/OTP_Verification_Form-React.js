@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Form from "./Components/Form";
 import UserForm from "./Components/UserForm.js";
+import AdminLogin from "./Components/AdminLogin";
+import AdminDashboard from "./Components/AdminDashboard";
 function App() {
   return (
     <>
@@ -11,7 +13,12 @@ function App() {
         <Routes>
           <Route path="/UserForm" element={<UserForm />} />
         </Routes>
-        ;
+        <Routes>
+          <Route path="/admin" element={<AdminLogin />} />
+        </Routes>
+        <Routes>
+          <Route path="/adminDashboard" element={<AdminDashboard />} />
+        </Routes>
       </BrowserRouter>
     </>
   );

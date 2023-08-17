@@ -13,6 +13,13 @@ const schema = new moongoose.Schema({
     type: Number,
     required: false,
   },
+  role: {
+    type: String,
+  },
+  status: {
+    type: String,
+    default: null,
+  },
   address: {
     type: String,
     required: false,

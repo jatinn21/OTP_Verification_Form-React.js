@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../Css/userForm.css";
-// import { Link } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 class UserForm extends Component {
@@ -55,24 +54,27 @@ class UserForm extends Component {
 
     const { name, email, mobileNumber, DOB, gender, address, intro, resume } =
       this.state;
-    const url = "http://localhost:8080";
+    // const url = "otp-verification-form-react-js-yf2h.vercel.app";
 
-    const res = await fetch(`${url}/register`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        mobileNumber,
-        DOB,
-        gender,
-        address,
-        intro,
-        resume,
-      }),
-    });
+    const res = await fetch(
+      `https://otp-verification-form-react-js-yf2h.vercel.app/register`,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          mobileNumber,
+          DOB,
+          gender,
+          address,
+          intro,
+          resume,
+        }),
+      }
+    );
 
     const data = await res.json();
     if (data.status === 422 || !data) {
