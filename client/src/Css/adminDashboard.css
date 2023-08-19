@@ -289,7 +289,9 @@ input::-webkit-search-decoration {
 }
 
 #hidden_input_profile {
-  display: none;
+  /* display: none; */
+  position: absolute;
+  left: -99999%;
 }
 
 .admin_profile_form_submit_btn {

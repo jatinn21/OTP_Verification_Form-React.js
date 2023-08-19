@@ -35,6 +35,22 @@ class AdminProfile extends Component {
     );
   };
 
+  HandleAdminProfilePic = (event) => {
+    const h1 = document
+      .querySelector("#hidden_input_profile")
+      .value.split(`\\`);
+
+    console.log(h1[h1.length - 1]);
+    const FileName = h1[h1.length - 1];
+
+    this.setState({
+      admin__new__profilePic: document.querySelector("#hidden_input_profile")
+        .value,
+    });
+
+    document.querySelector("#custom_profile_input_btn").textContent = FileName;
+  };
+
   render() {
     return (
       <div className="adminDashboard_body">
@@ -61,8 +77,15 @@ class AdminProfile extends Component {
                     type="file"
                     name="hidden_input_profile"
                     id="hidden_input_profile"
+                    onChange={this.HandleAdminProfilePic}
                   />
-                  <span className="custom_profile_input_btn">
+                  <span
+                    className="custom_profile_input_btn"
+                    id="custom_profile_input_btn"
+                    onClick={() =>
+                      document.querySelector("#hidden_input_profile").click()
+                    }
+                  >
                     Change Profile Picture
                   </span>
                 </span>
