@@ -13,13 +13,13 @@ class AdminSidebar extends Component {
           <p className="link">
             <Link className="linkTag center" to={"/admin/admin-Dashboard"}>
               <span className="linkText dashboard__link">Dashboard</span>
-              <span class="material-symbols-outlined">dashboard</span>
+              <span className="material-symbols-outlined">dashboard</span>
             </Link>
           </p>
           <p className="link">
             <Link className="linkTag center" to={"/admin/admin-Profile"}>
               <span className="linkText profile__link">Profile</span>
-              <span class="material-symbols-outlined">badge</span>
+              <span className="material-symbols-outlined">badge</span>
             </Link>
           </p>
           <p className="link applicants__link">
@@ -28,12 +28,12 @@ class AdminSidebar extends Component {
               to={"/admin/admin-Selected-Applicants"}
             >
               <span className="linkText">Selected Applicants</span>
-              <span class="material-symbols-outlined">groups_2</span>
+              <span className="material-symbols-outlined">groups_2</span>
             </Link>
           </p>
           <p className="link logout__link center">
             <span className="linkText">Logout</span>
-            <span class="material-symbols-outlined">logout</span>
+            <span className="material-symbols-outlined">logout</span>
           </p>
         </section>
       </div>

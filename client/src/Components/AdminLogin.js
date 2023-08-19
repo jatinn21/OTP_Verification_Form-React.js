@@ -6,7 +6,7 @@ class AdminLogin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      admin__Input__email: "js650555@gmail.com",
+      admin__Input__email: "zaynmalik@gmail.com",
       admin__Input__password: "admin123",
       admin_LoggedIn: "",
     };
@@ -21,7 +21,7 @@ class AdminLogin extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const email = "js650555@gmail.com";
+    const email = "zaynmalik@gmail.com";
     const password = "admin123";
     if (
       document.querySelector("#admin_email").value == email &&
