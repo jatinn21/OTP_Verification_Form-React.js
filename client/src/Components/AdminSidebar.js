@@ -10,25 +10,33 @@ class AdminSidebar extends Component {
           <span className="admin__greeting">Zayn Malik</span>
         </section>
         <section className="links">
-          <p className="link">
+          <p className="link" id="dashboard" name="dashboard">
             <Link className="linkTag center" to={"/admin/admin-Dashboard"}>
               <span className="linkText dashboard__link">Dashboard</span>
               <span className="material-symbols-outlined">dashboard</span>
             </Link>
           </p>
-          <p className="link">
+          <p className="link" id="profile" name="profile">
             <Link className="linkTag center" to={"/admin/admin-Profile"}>
               <span className="linkText profile__link">Profile</span>
               <span className="material-symbols-outlined">badge</span>
             </Link>
           </p>
-          <p className="link applicants__link">
+          <p className="link applicants__link" onClick={this.highlightLink}>
             <Link
               className="linkTag center"
               to={"/admin/admin-Selected-Applicants"}
             >
               <span className="linkText">Selected Applicants</span>
               <span className="material-symbols-outlined">groups_2</span>
+            </Link>
+          </p>
+          <p className="link applicants__link" onClick={this.highlightLink}>
+            <Link
+              className="linkTag center"
+              to={"/admin/admin-Save-Applicants"}
+            >
+              <span className="linkText">Save Applicants ★</span>
             </Link>
           </p>
           <p className="link logout__link center">

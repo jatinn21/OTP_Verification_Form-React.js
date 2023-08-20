@@ -5,6 +5,7 @@ import AdminLogin from "./Components/AdminLogin";
 import AdminDashboard from "./Components/AdminDashboard";
 import AdminProfile from "./Components/AdminProfile";
 import AdminSelectedApplicants from "./Components/AdminSelectedApplicants";
+import AdminSaveApplicants from "./Components/AdminSaveApplicants";
 function App() {
   return (
     <>
@@ -28,6 +29,12 @@ function App() {
           <Route
             path="/admin/admin-Selected-Applicants"
             element={<AdminSelectedApplicants />}
+          />
+        </Routes>
+        <Routes>
+          <Route
+            path="/admin/admin-Save-Applicants"
+            element={<AdminSaveApplicants />}
           />
         </Routes>
       </BrowserRouter>
